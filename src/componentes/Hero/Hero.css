@@ -1,0 +1,21 @@
+.hero-container {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem; /* Tamaño de letra más grande */
+    text-decoration: underline; /* Subrayado debajo del título */
+  }
+  
+  .title-underline {
+    width: 100px; /* Ancho del subrayado */
+    height: 3px; /* Altura del subrayado */
+    background-color: #000; /* Color del subrayado */
+    margin: auto; /* Centra el subrayado */
+  }
+  
+  .hero-slogan {
+    font-size: 1.5rem; /* Tamaño de letra para el eslogan */
+  }
+  
+  
