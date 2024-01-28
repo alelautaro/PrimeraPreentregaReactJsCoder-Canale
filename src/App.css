@@ -1,0 +1,15 @@
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 105%;
+  width: 100%;
+  }
+
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #F500AA, #FF0000);
+  }

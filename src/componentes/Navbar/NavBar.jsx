@@ -1,12 +1,15 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { CartWidget } from '../CartWidget/Cartwidget'
+
 
 const navigation = [
     { name: 'inicio', href: '#', current: true },
     { name: 'Contacto', href: '#', current: false },
     { name: 'Nosotros', href: '#', current: false },
     { name: 'Productos', href: '#', current: false },
+    { name: <CartWidget />, href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -26,20 +29,14 @@ export default function Example() {
                                     <span className="absolute -inset-0.5" />
                                     <span className="sr-only">Abrir menu de inicio</span>
                                     {open ? (
-                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                        <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                                     ) : (
-                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                        <XIcon className="block h-6 w-6" aria-hidden="true" />
                                     )}
                                 </Disclosure.Button>
                             </div>
+                            
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex flex-shrink-0 items-center">
-                                    <img
-                                        className="h-8 w-auto"
-                                        src='Proyectocoder+canale\public\imagenes\AleLogo.png'
-                                        alt="Mi local"
-                                    />
-                                </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
@@ -59,14 +56,7 @@ export default function Example() {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <button
-                                    type="button"
-                                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-800"
-                                >
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">Carrito</span>
-                                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                                </button>
+                            
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="relative ml-3">
@@ -144,10 +134,15 @@ export default function Example() {
                                     {item.name}
                                 </Disclosure.Button>
                             ))}
+                            
+                          
                         </div>
                     </Disclosure.Panel>
+                    
                 </>
             )}
+            
+  
         </Disclosure>
     )
 }

@@ -3,16 +3,18 @@ import './App.css'
 import NavBar from './componentes/Navbar/NavBar'
 import Footer from './componentes/Footer/Footer'
 import Hero from './componentes/Hero/Hero'
-import Productos from './componentes/Productos/Productos'
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 
 
 function App  ()  {
   return (
     <>
+    <div className="App">
     <NavBar/>
     <Hero/>
-    <Productos/>
+    <ItemListContainer/>
     <Footer/>
+    </div>
     </>
   )
 }
