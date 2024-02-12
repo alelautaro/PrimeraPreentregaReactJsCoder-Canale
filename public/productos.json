@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Camiseta básica blanca",
+      "description": "Camiseta básica blanca de algodón de corte recto",
+      "price": 15.99,
+      "image": "./assets/images/camisablanca.webp"
+    },
+    {
+      "id": 2,
+      "name": "Jeans clásicos azules",
+      "price": 29.99,
+      "description": "Jeans clásicos azules de corte recto y tiro medio",
+      "image": "./assets/images/JeansAzules.webp"
+    },
+    {
+      "id": 3,
+      "name": "Vestido floral veraniego",
+      "description": "Vestido floral veraniego de algodón con escote en V",
+      "price": 39.99,
+      "image": "./assets/images/VestidoFloral.webp"
+    },
+    {
+      "id": 4,
+      "name": "Chaqueta de cuero negra",
+      "description": "Chaqueta de cuero negra de corte entallado",
+      "price": 49.99,
+      "image": "./assets/images/ChaquetaCuero.webp"
+    }
+  ]

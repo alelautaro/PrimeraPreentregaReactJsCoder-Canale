@@ -1,49 +1,66 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
-import ProductCard from "../Card/Card";
-import  camisa from "../../assets/images/camisaBlanca.webp";
-import  jeansazules from "../../assets/images/JeansAzules.webp";
-import  vestido from "../../assets/images/vestidoveraniego.webp";
-import  chaquetanegra from "../../assets/images/chaquetanegradecuero.webp";
-const ItemListContainer = ()=> {
-  const products = [
-    {
-      id: 1,
-      name: "Camiseta básica blanca",
-      description: "Camiseta básica blanca de algodón de corte recto",
-      price: 15.99,
-      image: camisa
-    },
-    {
-      id: 2,
-      name: "Jeans clásicos azules",
-      price: 29.99,
-      description: "Jeans clásicos azules de corte recto y tiro medio",
-      image: jeansazules      
-    },
-    {
-      id: 3,
-      name: "Vestido floral veraniego",
-      description: "Vestido floral veraniego de algodón con escote en V",
-      price: 39.99,
-      image: vestido
-    },
-    {
-      id: 4,
-      name: "Chaqueta de cuero negra",
-      description: "Chaqueta de cuero negra de corte entallado",
-      price: 49.99,
-      image: chaquetanegra
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import ItemContandor from "./itemcontandor";
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
+import Box from '@mui/material/Box';
+
+
+
+
+const ItemListContainer = ({greeting}) => {
+  const [productos, setProductos] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('./productos.json');
+      const data = await response.json();
+      setProductos(data);
+    } catch (error) {
+      console.log('Error', error);
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  
 
   return (
-    <div>
-    {products.map((product) => (
-      <ProductCard key={product.id} product={product} />
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', p: 1, m: 1 }}>
+    {productos.length === 0 ? <h1>cargando..</h1> : productos.map((producto) => (
+      <Box key={producto.id} sx={{ p: 1 }}>
+        <Card sx={{ maxWidth: 300, display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 1, height: 450, bgcolor: 'pink' }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={producto.image} 
+            alt={producto.name}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {producto.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {producto.description}
+            </Typography>
+            <Typography variant="body1">
+              {producto.price}
+            </Typography>
+          
+          </CardContent>
+          <CardActions  sx={{ justifyContent: 'center' }}>
+       
+      </CardActions>
+      <ItemContandor/>
+        </Card>
+      </Box>
     ))}
-  </div>
-  );
-};
+  </Box>
+  )};
 
 export default ItemListContainer;

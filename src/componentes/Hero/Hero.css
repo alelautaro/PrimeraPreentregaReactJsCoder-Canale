@@ -3,6 +3,7 @@ padding: 3%;
   background-color: #000000; 
   color: #ffffff; 
   flex-direction: column;
+  width: 100%;
 }
 
 .hero-title {
@@ -31,5 +32,5 @@ display: block;
   .logo {
     margin: 0 auto;
     width: 300px; 
-    height: 100px; 
+    height: 200px; 
   }

@@ -1,15 +1,9 @@
-html, body, #root, .App {
+ html,body {
+position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 105%;
-  width: 100%;
-  }
-
-
-  .App {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-    background: linear-gradient(45deg, #F500AA, #FF0000);
-  }
+}

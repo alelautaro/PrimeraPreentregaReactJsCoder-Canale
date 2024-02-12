@@ -1,7 +1,8 @@
 .footer-container {
-  background-color: #292626; /* Fondo oscuro */
-  color: #fff; /* Letras en blanco */
+  background-color: #292626; 
+  color: #fff;
   padding: 20px;
   text-align: center;
-  margin-top: auto; /* Añade esta línea */
+  margin-top: auto; 
+  width: 100%;
 }
