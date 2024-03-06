@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "/src/context/Cartcontext";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,8 +8,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import "./item.css";
-import CartWidget from "../CartWidget/CartWidget";
-
 
 const Item = ({ id, name, description, price, image, category }) => {
   const [cart, setCart] = useContext(CartContext);
@@ -77,10 +76,10 @@ const Item = ({ id, name, description, price, image, category }) => {
           <Button variant="contained" onClick={restarDelCarrito}>-</Button>
           <Typography variant="body1">{cantidadPorItem}</Typography>
           <Button variant="contained" onClick={agregarAlCarrito}>+</Button>
-          
-         
         </div>
-        {/* El botón de agregar al carrito simplemente incrementa la cantidad, no agrega nuevos productos */}
+        <Link to="/carrito"> {/* Utiliza el componente Link para crear el enlace al carrito */}
+          <Button variant="contained">Comprar</Button> {/* Botón "Comprar" */}
+        </Link>
       </Card>
     </Box>
   );
